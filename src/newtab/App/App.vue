@@ -120,9 +120,9 @@ export default {
     },
     loginOrRegister() {
       let _this = this
-      let url = 'http://localhost:8080/wx/auth/login'
+      let url = 'https://api.shuhai360.com/wx/auth/login'
       if(!_this.isLogin) {
-        url = 'http://localhost:8080/wx/auth/register'
+        url = 'https://api.shuhai360.com/wx/auth/register'
       }
 
       const options = {
@@ -151,7 +151,7 @@ export default {
     },
     getCaptcha () {
       let _this = this
-      let url = 'http://localhost:8080/wx/auth/regCaptcha'
+      let url = 'https://api.shuhai360.com/wx/auth/regCaptcha'
       const data = {'mobile': _this.userInfo.email}
       const options = {
         method: 'POST',

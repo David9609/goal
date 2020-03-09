@@ -171,7 +171,7 @@ export default {
       chrome.storage.sync.get('userInfo', function(data) {
         let access_token = data.userInfo.access_token
         
-        let url = 'http://localhost:8080/wx/todo/list'
+        let url = 'https://api.shuhai360.com/wx/todo/list'
         const options = {
           method: 'GET',
           headers: { 'content-type': 'application/json','access_token': access_token},
@@ -257,9 +257,9 @@ export default {
       chrome.storage.sync.get('userInfo', function(data) {
         let access_token = data.userInfo.access_token
         console.log(access_token)
-        let url = 'http://localhost:8080/wx/todo/add'
+        let url = 'https://api.shuhai360.com/wx/todo/add'
         if(_this.taskForm.id >0) {
-          url = 'http://localhost:8080/wx/todo/modify'
+          url = 'https://api.shuhai360.com/wx/todo/modify'
         }
         const options = {
           method: 'POST',
@@ -289,7 +289,7 @@ export default {
         
         let access_token = data.userInfo.access_token
         console.log(access_token)
-        let url = 'http://localhost:8080/wx/todo/modify'
+        let url = 'https://api.shuhai360.com/wx/todo/modify'
         const options = {
           method: 'POST',
           headers: { 'content-type': 'application/json','access_token': access_token},
@@ -321,7 +321,7 @@ export default {
         
         let access_token = data.userInfo.access_token
         console.log(access_token)
-        let url = 'http://localhost:8080/wx/todo/modify'
+        let url = 'https://api.shuhai360.com/wx/todo/modify'
         const options = {
           method: 'POST',
           headers: { 'content-type': 'application/json','access_token': access_token},
@@ -347,7 +347,7 @@ export default {
       chrome.storage.sync.get('userInfo', function(data) {
         let access_token = data.userInfo.access_token
         console.log(access_token)
-        let url = 'http://localhost:8080/wx/todo/list'
+        let url = 'https://api.shuhai360.com/wx/todo/list'
         const options = {
           method: 'GET',
           headers: { 'content-type': 'application/json','access_token': access_token},
