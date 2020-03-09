@@ -1,0 +1,6 @@
+{
+  "globals":{
+      "chrome":  true
+    },
+    "extends": ["plugin:vue/base"]
+}

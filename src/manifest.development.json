@@ -1,0 +1,41 @@
+{
+    "manifest_version": 2,
+    "name": "愚公学堂-时间管理",
+    "description": "never stop learning",
+    "version": "0.0.1",
+    "options_page": "options.html",
+    "icons": {
+        "16": "assets/logo.png",
+        "48": "assets/logo.png",
+        "128": "assets/logo.png"
+    },
+    "browser_action": {
+        "default_icon": "assets/logo.png",
+        "default_popup": "popup.html"
+    },
+    // 覆盖浏览器默认页面
+    "chrome_url_overrides":
+    {
+        // 覆盖浏览器默认的新标签页
+        "newtab": "newtab.html"
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "content_scripts": [
+        {
+            "matches":[
+                "*://*.shuhai360.com/*"
+            ],
+            "js": [
+                "js/content.js"
+            ],
+            "run_at":"document_end"
+        }
+    ],
+    "permissions": [
+        "bookmarks",
+        "webRequest",
+        "storage",
+        "*://*.shuhai360.com/",
+        "http://localhost/*"
+    ]
+}

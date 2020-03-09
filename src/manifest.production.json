@@ -1,0 +1,16 @@
+{
+    "manifest_version": 2,
+    "name": "愚公学堂-时间管理",
+    "description": "never stop learning",
+    "version": "0.0.1",
+    "options_page": "options.html",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "bookmarks",
+        "webRequest",
+        "*://*.shuhai360.com/",
+        "http://localhost/*"
+    ]
+}
