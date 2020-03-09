@@ -169,8 +169,9 @@ export default {
     getParentTask (yearIndex,dateIndex,type) {
       let _this = this
       chrome.storage.sync.get('userInfo', function(data) {
-        let access_token = data.userInfo.access_token
         
+        if (data && data.userInfo) {
+          let access_token = data.userInfo.access_token
         let url = 'https://api.shuhai360.com/wx/todo/list'
         const options = {
           method: 'GET',
@@ -186,6 +187,9 @@ export default {
              _this.$emit('showLogin',{})
           }
         })
+        } else {
+          _this.$emit('showLogin',{})
+        }
       })
     }, 
     init (dateStep) {
@@ -255,8 +259,9 @@ export default {
     submitTask () {
       let _this = this
       chrome.storage.sync.get('userInfo', function(data) {
-        let access_token = data.userInfo.access_token
-        console.log(access_token)
+       
+        if (data && data.userInfo ) { 
+          let access_token = data.userInfo.access_token
         let url = 'https://api.shuhai360.com/wx/todo/add'
         if(_this.taskForm.id >0) {
           url = 'https://api.shuhai360.com/wx/todo/modify'
@@ -280,15 +285,19 @@ export default {
             // _this.loginDialogVisible = true
           }
         })
+        } else {
+          _this.$emit('showLogin',{})
+        }
       })
-     
+      
     },
     modify (item) {
       let _this = this
       chrome.storage.sync.get('userInfo', function(data) {
         
-        let access_token = data.userInfo.access_token
-        console.log(access_token)
+        
+        if (data && data.userInfo) { 
+          let access_token = data.userInfo.access_token
         let url = 'https://api.shuhai360.com/wx/todo/modify'
         const options = {
           method: 'POST',
@@ -304,6 +313,9 @@ export default {
             _this.$emit('showLogin',{})
           }
         })
+        } else {
+          _this.$emit('showLogin',{})
+        }
       })
     },
     modifyItem (item, index) {
@@ -319,8 +331,9 @@ export default {
       let _this = this
       chrome.storage.sync.get('userInfo', function(data) {
         
+        
+        if (data && data.userInfo ) { 
         let access_token = data.userInfo.access_token
-        console.log(access_token)
         let url = 'https://api.shuhai360.com/wx/todo/modify'
         const options = {
           method: 'POST',
@@ -336,6 +349,9 @@ export default {
              _this.$emit('showLogin',{})
           }
         })
+        } else {
+          _this.$emit('showLogin',{})
+        }
       })
     },
     getUnitText (unit) {
@@ -345,8 +361,9 @@ export default {
     getData () {
       let _this = this
       chrome.storage.sync.get('userInfo', function(data) {
-        let access_token = data.userInfo.access_token
-        console.log(access_token)
+        
+        if (data && data.userInfo ) {
+          let access_token = data.userInfo.access_token
         let url = 'https://api.shuhai360.com/wx/todo/list'
         const options = {
           method: 'GET',
@@ -362,6 +379,9 @@ export default {
              _this.$emit('showLogin',{})
           }
         })
+        } else {
+          _this.$emit('showLogin',{})
+        }
       })
     },
     getDayNumber (d) {
