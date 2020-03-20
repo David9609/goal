@@ -116,7 +116,7 @@ export default {
       taskForm: {
         id: 0,
         title:'',
-        parentTaskId: null,
+        parentTaskId: 0,
         level: null,
         introduce: '',
         tType: null,
