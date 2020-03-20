@@ -1,5 +1,4 @@
-# xuetang-chrome
-# chrom 插件
+# xuetang-chrome （chrom 插件，清单程序）
 
 ## Project setup
 ```
